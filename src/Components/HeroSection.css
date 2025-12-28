@@ -1,0 +1,218 @@
+ .a {
+   padding-right: 80px;
+   padding-top: 4%;
+   position: fixed;
+   display: flex;
+   z-index: 9999;
+   justify-content: end;
+   flex-wrap: wrap;
+ }
+
+ .chatbot-cont {
+   background-color: azure;
+ }
+
+ .hero-container {
+   background: url('../../public/images/gone.jpg') center center/cover no-repeat;
+   height: 90vh;
+    width: 100%;
+    /* box-shadow: inset 0 0 0 1000px rgb(19 29 23 / 63%); */
+    object-fit: contain;
+
+    /* background: #000000d9; */
+ }
+ .image-owner{
+  margin : 50px 50px 0px 0px;
+  width: 320px;
+  border-radius: 10px;
+ }
+ .home-div{
+  display: flex;
+justify-content:center ;
+ }
+ .home-text{
+  margin-top: 100px;
+  color: white;
+  width: 40%;
+  font-size: 20px;
+ }
+  .text-home-cont-four {
+   width: 100%;
+   text-align: center;
+ }
+
+ .text-home-four {
+   padding-top: 22px;
+   margin-left: 20%;
+   font-weight: bold;
+   font-size: 40px;
+   color: #2c3233;
+ }
+
+ .lost-text {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   padding-left: 5%;
+   font-size: 130px;
+   color: #d29c5c;
+   font-weight: bold;
+ }
+
+ .lost-cont {
+   width: 480px;
+   padding-top: 3%;
+   height: auto;
+ }
+
+ .span-a {
+   color: #d29c5c;
+ }
+
+ .lost-here {
+   text-align: center;
+   color: #ffff;
+   margin-left: 4px;
+   font-size: 20px;
+ }
+
+ .span-home {
+   color: #ffff;
+ }
+
+ .aaaa {
+   height: 90vh;
+   overflow: hidden;
+   width: 100%;
+   object-fit: cover;
+ }
+
+ .moving-image {
+   height: 60px;
+   width: 64px;
+   justify-content: end;
+   padding: 10px;
+   background-color: white;
+   border-radius: 50%;
+   margin: 4px;
+   position: sticky;
+ }
+
+ .abcdefgh {
+   justify-content: end;
+   align-items: flex-end;
+   display: flex;
+
+ }
+
+ @media screen and (max-width: 968px) {
+   .text-home-one {
+     font-size: 30px;
+
+   }
+
+   .text-home-two {
+     font-size: 30px;
+
+   }
+
+   .text-home-three {
+     font-size: 30px;
+
+   }
+
+   .text-home-four {
+     font-size: 30px;
+   }
+ }
+
+ @media screen and (max-width: 768px) {
+   .lost-cont {
+     padding-top: 10%;
+     width: 350px;
+   }
+
+   .text-home-one {
+     font-size: 25px;
+
+   }
+
+   .text-home-two {
+     font-size: 25px;
+
+   }
+
+   .text-home-three {
+     font-size: 25px;
+
+   }
+
+   .text-home-four {
+     font-size: 25px;
+   }
+
+   .lost-text {
+     font-size: 100px;
+   }
+
+   .lost-here {
+     font-size: 20px;
+   }
+
+   .a {
+     padding-right: 25px;
+   }
+
+   .hero-container>p {
+     font-size: 30px;
+   }
+
+   .btn-mobile {
+     display: block;
+     text-decoration: none;
+   }
+
+   .btn {
+     width: 100%;
+   }
+ }
+
+ @media screen and (max-width: 458px) {
+  .hero-container {
+    background: url('../../public/images/mob-back.png') center center/cover no-repeat;
+      /* background: #000000d9; */
+  }
+   .lost-cont {
+     width: 270px;
+     padding-top: 20%;
+   }
+
+   .lost-text {
+     font-size: 80px;
+   }
+
+   .lost-here {
+     font-size: 13px;
+   }
+
+   .text-home-one {
+     font-size: 20px;
+
+   }
+
+   .text-home-two {
+     font-size: 20px;
+
+   }
+
+   .text-home-three {
+     font-size: 20px;
+
+   }
+
+   .text-home-four {
+     font-size: 20px;
+   }
+
+   .a {
+     padding-right: 0px;
+   }
+ }
