@@ -31,9 +31,18 @@
 }
 .contact-details-text{
     padding-left: 25px;
+                        ;
     color: #333533;
     font-size: 17px;
 }
+
+.contact-details-text-new{
+    padding-left: 25px;
+    padding-top: 10px                   ;
+    color: #333533;
+    font-size: 17px; 
+}
+
 .contact-inquiry-cont{
   
     padding-right: 15%;

@@ -1,5 +1,5 @@
 import Navbar from "./Components/Navbar";
-import './App.css'
+import "./App.css";
 import Home from "./Components/home";
 import About from "./Components/About";
 import Services from "./Components/Services";
@@ -7,26 +7,24 @@ import Contactus from "./Components/Contactus";
 import Footer from "./Components/Footer";
 import Clients from "./Components/Clients";
 import { useState, useEffect } from "react";
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
-import emailjs from '@emailjs/browser';
-
-
+import React from "react";
+import ReactDOM from "react-dom";
+import Modal from "react-modal";
+import emailjs from "@emailjs/browser";
 
 const customStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
   },
 };
 
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-// Modal.setAppElement('#yourAppElement');
+Modal.setAppElement("#root");
 
 function App() {
   const [tfValues, settfValues] = useState(false);
@@ -35,50 +33,71 @@ function App() {
   }
 
   let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(true);
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpen(!modalIsOpen);
   }
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
+    // subtitle.style.color = '#f00';
   }
 
   function closeModal() {
     setIsOpen(false);
   }
 
-  const initialValues = { username: "", email: "", phone: "", category: "", message: "" };
+  const initialValues = {
+    username: "",
+    email: "",
+    phone: "",
+    category: "",
+    message: "",
+  };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
   const [errorsValoues, Seterrorsvalues] = useState("");
 
   const handleSubmit = (e) => {
-
     e.preventDefault();
-    if (formValues.email.length == 0 || formValues.message.length == 0 || formValues.phone.length == 0 || formValues.username == 0 || formValues.category.length == 0) {
+    if (
+      formValues.email.length == 0 ||
+      formValues.message.length == 0 ||
+      formValues.phone.length == 0 ||
+      formValues.username == 0 ||
+      formValues.category.length == 0
+    ) {
       Seterrorsvalues("Kindly Provide all required information to proceed");
     } else {
-
       Seterrorsvalues("Send Successfully");
-      emailjs.send('service_0wpo01p', 'template_bjtgqtb', formValues, "b98PeCBBoiRZVeQRP")
-        .then(response => {
-          console.log('SUCCESS!', response);
-          setFormValues({
-            username: "", email: "", phone: "", category: "", message: ""
-          });
-          setStatus('SUCCESS');
-          Seterrorsvalues("Send Successfully");
-        }, error => {
-          console.log('FAILED...', error);
-        });
+      emailjs
+        .send(
+          "service_p3kgpfb",
+          "template_ig0yyxy",
+          formValues,
+          "LsAouDFJNxJ7_9Z53"
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response);
+            setFormValues({
+              username: "",
+              email: "",
+              phone: "",
+              category: "",
+              message: "",
+            });
+            setStatus("SUCCESS");
+            Seterrorsvalues("Send Successfully");
+          },
+          (error) => {
+            console.log("FAILED...", error);
+          }
+        );
     }
-
-
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -112,26 +131,27 @@ function App() {
     return errors;
   };
 
-
   const theme = {
-
-    background: '#f5f8fb',
-    fontFamily: 'Helvetica Neue',
-    headerBgColor: '#d29c5c',
-    headerFontColor: '#fff',
-    headerFontSize: '15px',
-    botBubbleColor: '#d29c5c',
-    botFontColor: '#fff',
-    userBubbleColor: '#fff',
-    userFontColor: '#4a4a4a',
+    background: "#f5f8fb",
+    fontFamily: "Helvetica Neue",
+    headerBgColor: "#d29c5c",
+    headerFontColor: "#fff",
+    headerFontSize: "15px",
+    botBubbleColor: "#d29c5c",
+    botFontColor: "#fff",
+    userBubbleColor: "#fff",
+    userFontColor: "#4a4a4a",
   };
   return (
-
     <div className="App">
-      <button className="floatingButton " onClick={openModal}>Book Appointment</button>
+      <button
+        id="floatingButtons"
+        className="floatingButton "
+        onClick={openModal}
+      >
+        Book Appointment
+      </button>
       <Navbar />
-
-
 
       <Home />
 
@@ -142,7 +162,6 @@ function App() {
       {/* <Clients/> */}
       <Contactus />
       <Footer />
-
 
       <Modal
         isOpen={modalIsOpen}
@@ -155,12 +174,26 @@ function App() {
         {/* <button onClick={closeModal}>close</button> */}
         {/* <div>I am a modal</div> */}
         <form onSubmit={handleSubmit}>
-          <p className='contact-one-heads' ><span className='us'>Schedule</span> Meeting</p >
+          <div className=""></div>
+          <div
+            style={{ justifyContent: "end", width: "100%", textAlign: "end" }}
+          >
+            <p
+              style={{ cursor: "pointer", padding: "5px" }}
+              onClick={openModal}
+            >
+              {" "}
+              X
+            </p>
+          </div>
+          <p className="contact-one-heads">
+            <span className="us">Schedule</span> Meeting
+          </p>
           <div className="ui divider"></div>
           <div className="ui form">
             <div className="field">
-
-              <input className='input-decoration-inquiry-form'
+              <input
+                className="input-decoration-inquiry-form"
                 type="text"
                 name="username"
                 placeholder="Full Name"
@@ -170,8 +203,8 @@ function App() {
             </div>
             <p>{formErrors.username}</p>
             <div className="field">
-
-              <input className='input-decoration-inquiry-form'
+              <input
+                className="input-decoration-inquiry-form"
                 type="text"
                 name="email"
                 placeholder="Email"
@@ -181,8 +214,8 @@ function App() {
             </div>
             <p>{formErrors.email}</p>
             <div className="field">
-
-              <input className='input-decoration-inquiry-form'
+              <input
+                className="input-decoration-inquiry-form"
                 type="Text"
                 name="phone"
                 placeholder="Phone"
@@ -192,8 +225,8 @@ function App() {
             </div>
             <p>{formErrors.password}</p>
             <div className="field">
-
-              <input className='input-decoration-inquiry-form'
+              <input
+                className="input-decoration-inquiry-form"
                 type="Text"
                 name="category"
                 placeholder="Category"
@@ -203,8 +236,14 @@ function App() {
             </div>
             <p>{formErrors.password}</p>
             <div className="field">
-
-              <textarea style={{ "columns": "8", "rows": "5", "height": "150px", "resize": "none" }} className='input-decoration-inquiry-form'
+              <textarea
+                style={{
+                  columns: "8",
+                  rows: "5",
+                  height: "150px",
+                  resize: "none",
+                }}
+                className="input-decoration-inquiry-form"
                 type="Text"
                 name="message"
                 placeholder="Message"
@@ -215,7 +254,7 @@ function App() {
             <p>{formErrors.password}</p>
 
             <button className="bttn-submit">Submit</button>
-            <p className='show-error'>{errorsValoues}</p>
+            <p className="show-error">{errorsValoues}</p>
           </div>
         </form>
       </Modal>

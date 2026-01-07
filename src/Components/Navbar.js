@@ -33,11 +33,8 @@ function Navbar() {
         <img className='logo' src={logo} />
 
         <div className='menu-icon' onClick={handleClick}>
-          <div>
-            {/* <img className='w-apps' onClick={() => window.open("https://api.whatsapp.com/send?phone=12672172223")} src={wapps} /> */}
-
-          </div>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+         
+          <i fill="white" className={click ? 'fas fa-times' : 'fas fa-bars'} />
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item' onClick={()=>{ window.scrollTo({top: 0, behavior: 'smooth'});}}>

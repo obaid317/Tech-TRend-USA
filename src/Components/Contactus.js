@@ -1,38 +1,59 @@
-import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
-import emailjs from '@emailjs/browser';
-import "../Components/Contact.css"
+import emailjs from "@emailjs/browser";
+import "../Components/Contact.css";
 
 function Contactus() {
-  const initialValues = { username: "", email: "", phone: "", category: "", message: "" };
+  const initialValues = {
+    username: "",
+    email: "",
+    phone: "",
+    category: "",
+    message: "",
+  };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
   const [errorsValoues, Seterrorsvalues] = useState("");
 
   const handleSubmit = (e) => {
-
     e.preventDefault();
-    if (formValues.email.length == 0 || formValues.message.length == 0 || formValues.phone.length == 0 || formValues.username == 0 || formValues.category.length == 0) {
+    if (
+      formValues.email.length == 0 ||
+      formValues.message.length == 0 ||
+      formValues.phone.length == 0 ||
+      formValues.username == 0 ||
+      formValues.category.length == 0
+    ) {
       Seterrorsvalues("Kindly Provide all required information to proceed");
     } else {
-
       Seterrorsvalues("Send Successfully");
-      emailjs.send('service_0wpo01p', 'template_bjtgqtb', formValues ,"b98PeCBBoiRZVeQRP"  )
-        .then(response => {
-          console.log('SUCCESS!', response);
-          setFormValues({
-            username: "", email: "", phone: "", category: "", message: ""
-          });
-          setStatus('SUCCESS');
-          Seterrorsvalues("Send Successfully");
-        }, error => {
-          console.log('FAILED...', error);
-        });
+      emailjs
+        .send(
+          "service_p3kgpfb",
+          "template_ig0yyxy",
+          formValues,
+          "LsAouDFJNxJ7_9Z53"
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response);
+            setFormValues({
+              username: "",
+              email: "",
+              phone: "",
+              category: "",
+              message: "",
+            });
+            setStatus("SUCCESS");
+            Seterrorsvalues("Send Successfully");
+          },
+          (error) => {
+            console.log("FAILED...", error);
+          }
+        );
     }
-
-
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -66,35 +87,40 @@ function Contactus() {
     return errors;
   };
   return (
-    <div className='contact-main' id='contact'>
-      <div className='contact-cont-one'>
-        <p className='contact-one-head'>Contact <span className='us'>Us</span></p>
-        <div className='contact-details'>
-          <img src='images/mail.svg' height={"20px"} />
-          <p className='contact-details-text'>info@techtrendusa.com</p>
+    <div className="contact-main" id="contact">
+      <div className="contact-cont-one">
+        <p className="contact-one-head">
+          Contact <span className="us">Us</span>
+        </p>
+        <div className="contact-details">
+          <img src="images/mail.svg" height={"20px"} />
+          <p className="contact-details-text">info@techtrendusa.com</p>
         </div>
-        <div className='contact-details'>
-          <img src='images/Phone.svg' height={"29px"} style={{ "padding-top": "7px" }} />
-          <p className='contact-details-text'>+1 267-217-2223</p>
+        <div className="contact-details">
+          <img
+            src="images/Phone.svg"
+            height={"29px"}
+            style={{ "padding-top": "7px" }}
+          />
+          <p className="contact-details-text-new">+1 (215) 929-5487</p>
         </div>
         {/* <div className='contact-details'>
           <img src='images/whatsapp.svg' height={"29px"} />
           <p className='contact-details-text'>+1 267-217-2223</p>
         </div> */}
-
       </div>
 
-      <div className='contact-inquiry-cont'>
+      <div className="contact-inquiry-cont">
         <div className="form-container">
-
-
           <form onSubmit={handleSubmit}>
-            <p className='contact-one-heads' ><span className='us'>For</span> Inquiries</p >
+            <p className="contact-one-heads">
+              <span className="us">For</span> Inquiries
+            </p>
             <div className="ui divider"></div>
             <div className="ui form">
               <div className="field">
-
-                <input className='input-decoration-inquiry-form'
+                <input
+                  className="input-decoration-inquiry-form"
                   type="text"
                   name="username"
                   placeholder="Full Name"
@@ -104,8 +130,8 @@ function Contactus() {
               </div>
               <p>{formErrors.username}</p>
               <div className="field">
-
-                <input className='input-decoration-inquiry-form'
+                <input
+                  className="input-decoration-inquiry-form"
                   type="text"
                   name="email"
                   placeholder="Email"
@@ -115,8 +141,8 @@ function Contactus() {
               </div>
               <p>{formErrors.email}</p>
               <div className="field">
-
-                <input className='input-decoration-inquiry-form'
+                <input
+                  className="input-decoration-inquiry-form"
                   type="Text"
                   name="phone"
                   placeholder="Phone"
@@ -126,8 +152,8 @@ function Contactus() {
               </div>
               <p>{formErrors.password}</p>
               <div className="field">
-
-                <input className='input-decoration-inquiry-form'
+                <input
+                  className="input-decoration-inquiry-form"
                   type="Text"
                   name="category"
                   placeholder="Category"
@@ -137,8 +163,14 @@ function Contactus() {
               </div>
               <p>{formErrors.password}</p>
               <div className="field">
-
-                <textarea style={{ "columns": "8", "rows": "5", "height": "150px", "resize": "none" }} className='input-decoration-inquiry-form'
+                <textarea
+                  style={{
+                    columns: "8",
+                    rows: "5",
+                    height: "150px",
+                    resize: "none",
+                  }}
+                  className="input-decoration-inquiry-form"
                   type="Text"
                   name="message"
                   placeholder="Message"
@@ -149,13 +181,13 @@ function Contactus() {
               <p>{formErrors.password}</p>
 
               <button className="bttn-submit">Submit</button>
-              <p className='show-error'>{errorsValoues}</p>
+              <p className="show-error">{errorsValoues}</p>
             </div>
           </form>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Contactus
+export default Contactus;
