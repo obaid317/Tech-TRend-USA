@@ -15,7 +15,7 @@ function About() {
     },
   };
   return (
-    <div className="about-cont">
+    <div id="services" className="about-cont">
       <div className="about-info">
         <p className="main-head">
           Featured <span className="span-head">Services</span>{" "}
@@ -23,7 +23,21 @@ function About() {
         <div className=" tech-main-conty">
           <div className="info-cont-text-tech ">
             <h3>Non Technical Tracks</h3>
-            <p className="ptext" style={{ padding: "10px 0px 0px 0px" }}>
+            <ul style={{ margin: "5px", padding: "5px" }}>
+              <li className="ptext">
+                AI Enhanced Project management/ Scrum Master{" "}
+              </li>
+              <li className="ptext">
+                Agile, Scrum, Waterfall (Beginner Friendly)
+              </li>
+              <li className="ptext">
+                AI tools for charts, forecasting an planning
+              </li>
+              <li className="ptext">
+                Risk Management, Stakeholder communication{" "}
+              </li>
+            </ul>
+            {/* <p className="ptext" style={{ padding: "10px 0px 0px 0px" }}>
               Business Analyst
             </p>
             <p className="ptext" style={{ padding: "5px 0px 0px 0px" }}>
@@ -34,13 +48,30 @@ function About() {
               Project Manager
             </p>
 
-            <p className="ptext ptext-small" style={{ padding: "15px 0px 0px 0px" }}>
+            <p
+              className="ptext ptext-small"
+              style={{ padding: "15px 0px 0px 0px" }}
+            >
               Learn leadership, agile and communication.
-            </p>
+            </p> */}
           </div>
-          <div style={{marginLeft:"10px"}} className="info-cont-text-tech">
+          <div   className="ml-5p info-cont-text-tech">
             <h3>Technical Tracks</h3>
-            <p className="ptext" style={{ padding: "10px 0px 0px 0px" }}>
+            <ul style={{ margin: "5px", padding: "5px" }}>
+              <li className="ptext">
+                Manual and Auto testing fundamentals{" "}
+              </li>
+              <li className="ptext">
+                Ai CodeGen for automated coding assistance 
+              </li>
+              <li className="ptext">
+                Framework building(logging, reporting, utilities)
+              </li>
+              <li className="ptext">
+                End to End projects workflow{" "}
+              </li>
+            </ul>
+            {/* <p className="ptext" style={{ padding: "10px 0px 0px 0px" }}>
               Test & QA Automation
             </p>
             <p className="ptext" style={{ padding: "5px 0px 0px 0px" }}>
@@ -51,9 +82,12 @@ function About() {
               Framework Development
             </p>
 
-            <p className="ptext ptext-small" style={{ padding: "15px 0px 0px 0px" }}>
+            <p
+              className="ptext ptext-small"
+              style={{ padding: "15px 0px 0px 0px" }}
+            >
               Build real automation skills employers need.
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="ftwo">
@@ -91,7 +125,7 @@ function About() {
           </div>
         </div>
 
-        <div style={{justifyContent:"center"}} className="ftwo ">
+        <div style={{ justifyContent: "center" }} className="ftwo ">
           <div className="main-container-last main-container">
             <div className="info-cont-tex">
               <h3>Placement</h3>

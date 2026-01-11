@@ -62,7 +62,7 @@ text-align: center;
     object-fit: scale-down;
 }
 .input-decoration-inquiry-form{
-    padding: 4px;
+    padding: 4px 15px;
     line-height: normal;
     margin: 7px 0px;
     height: 37px;
@@ -73,8 +73,7 @@ text-align: center;
 }
 input::placeholder {
     text-align: start;
-    padding-left: 12px;
-    justify-content: start;
+     justify-content: start;
     opacity: 0.7;
 }
 .bttn-submit{
@@ -91,8 +90,7 @@ input::placeholder {
 padding-left: 33%;
 }
 textarea::placeholder{
-    padding-left: 12px;
-    opacity: 0.7;
+     opacity: 0.7;
 }
 .show-error{
     padding-top: 20px;

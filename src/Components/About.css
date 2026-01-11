@@ -128,6 +128,7 @@
   color: white;
   padding: 10px;
   border-radius: 10px;
+  margin:  5px;
 }
 
 .ptext-small {
@@ -238,6 +239,9 @@
   width: 17%;
   text-align: end;
 }
+.ml-5p {
+  margin-left: "15px";
+}
 .main-card {
   height: 40vh;
   width: 50 vh;
@@ -266,14 +270,14 @@
   }
   .ftwo {
     display: block;
-    margin-right: 5%;
+    margin-right: 0%;
     padding-top: 0%;
   }
   .about-cont {
   }
   .ftwos {
     padding-top: 0%;
-    padding-left: 2%;
+    padding-left: 0%;
   }
   .ao {
     width: 100%;
@@ -331,24 +335,37 @@
     text-align: center;
     align-items: center;
     height: auto;
-    /* width: 241px; */
+    width: 86%;
     border-radius: 12px;
     background-repeat: no;
     background-size: cover;
     margin: 15px;
-    height: 150px;
+    height: 250px;
   }
-}
-@media screen and (max-width: 460px) {
   .main-container {
     display: inline-block;
+    height: auto;
+    text-align: center;
+    margin: 0px;
   }
   .info-cont-tex {
     width: 100%;
     height: auto;
   }
+}
+@media screen and (max-width: 460px) {
   .main-container {
-    height: 300px;
+    display: inline-block;
+    height: auto;
+    text-align: center;
+    margin: 0px;
+  }
+  .info-cont-tex {
+    width: 100%;
+    height: auto;
+  }
+  .tech-main-conty {
+    display: inline;
   }
 }
 @media screen and (max-width: 460px) {

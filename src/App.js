@@ -187,7 +187,7 @@ function App() {
             </p>
           </div>
           <p className="contact-one-heads">
-            <span className="us">Schedule</span> Meeting
+            <span className="us">Book A Free </span> Call
           </p>
           <div className="ui divider"></div>
           <div className="ui form">

@@ -31,9 +31,9 @@ function Services() {
         </div>
         <div className="teacher-section-main">
           <div className="  services-content">
-            <p className="service-heading-dup">
+            <p style={{marginTop:"10px"}} className="service-heading-dup">
               <span className="head-end">Meet Our Expert</span>
-              {" Instructor's"}
+              {" Instructors"}
             </p>
             <div className="teacher-info">
               <div className="teacher-main    ">
